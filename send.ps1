@@ -15,13 +15,13 @@ Write-Output "[Webhook]: Sending webhook to Discord..."
 
 Switch ($STATUS) {
   "success" {
-    $EMBED_COLOR=3066993
-    $STATUS_MESSAGE="Passed"
+    $EMBED_COLOR=1357344
+    $STATUS_MESSAGE="Build passed!"
     Break
   }
   "failure" {
-    $EMBED_COLOR=15158332
-    $STATUS_MESSAGE="Failed"
+    $EMBED_COLOR=12916741
+    $STATUS_MESSAGE="Build failed! :("
     Break
   }
   default {
@@ -29,7 +29,7 @@ Switch ($STATUS) {
     Break
   }
 }
-$AVATAR="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Appveyor_logo.svg/256px-Appveyor_logo.svg.png"
+$AVATAR="https://avatars3.githubusercontent.com/u/35406737"
 
 if (!$env:APPVEYOR_REPO_COMMIT) {
   $env:APPVEYOR_REPO_COMMIT="$(git log -1 --pretty="%H")"
