@@ -83,7 +83,7 @@ $WEBHOOK_DATA="{
       },
       {
         ""name"": ""Configuration"",
-        ""value"": ""[``$env.CONFIGURATION``](https://ci.appveyor.com/project/$env:APPVEYOR_ACCOUNT_NAME/$env:APPVEYOR_PROJECT_SLUG/build/job/$env:APPVEYOR_JOB_ID)"",
+        ""value"": ""[``$env:CONFIGURATION``](https://ci.appveyor.com/project/$env:APPVEYOR_ACCOUNT_NAME/$env:APPVEYOR_PROJECT_SLUG/build/job/$env:APPVEYOR_JOB_ID)"",
         ""inline"": true
       }
     ],
