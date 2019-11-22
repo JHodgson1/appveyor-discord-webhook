@@ -80,6 +80,11 @@ $WEBHOOK_DATA="{
         ""name"": ""Branch"",
         ""value"": ""[``$env:APPVEYOR_REPO_BRANCH``](https://github.com/$env:APPVEYOR_REPO_NAME/tree/$env:APPVEYOR_REPO_BRANCH)"",
         ""inline"": true
+      },
+      {
+        ""name"": ""Configuration"",
+        ""value"": ""[``$env.CONFIGURATION``](https://ci.appveyor.com/project/$env:APPVEYOR_ACCOUNT_NAME/$env:APPVEYOR_PROJECT_SLUG/build/job/$env:APPVEYOR_JOB_ID"",
+        ""inline"": true
       }
     ],
     ""timestamp"": ""$TIMESTAMP""
