@@ -57,9 +57,15 @@ else {
 
 $BUILD_VERSION = [uri]::EscapeDataString($env:APPVEYOR_BUILD_VERSION)
 $TIMESTAMP="$(Get-Date -format s)Z"
+
+if ($env:CONFIGURATION -eq "Release") {
+  $CONTENT = "<@836968319935709256>"
+}
+
 $WEBHOOK_DATA="{
   ""username"": """",
   ""avatar_url"": ""$AVATAR"",
+  ""content"": ""$CONTENT"",
   ""embeds"": [ {
     ""color"": $EMBED_COLOR,
     ""author"": {
@@ -90,6 +96,10 @@ $WEBHOOK_DATA="{
     ""timestamp"": ""$TIMESTAMP""
   } ]
 }"
+
+if ($env:CONFIGURATION -eq "Release") {
+  $WEBHOOK_DATA.CONTENT = "<@&836968319935709256>"
+}
 
 Invoke-RestMethod -Uri "$WEBHOOK_URL" -Method "POST" -UserAgent "AppVeyor-Webhook" `
   -ContentType "application/json" -Header @{"X-Author"="k3rn31p4nic#8383"} `
