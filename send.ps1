@@ -59,7 +59,7 @@ $BUILD_VERSION = [uri]::EscapeDataString($env:APPVEYOR_BUILD_VERSION)
 $TIMESTAMP="$(Get-Date -format s)Z"
 
 if ($env:CONFIGURATION -eq "Release") {
-  $CONTENT = "<@836968319935709256>"
+  $CONTENT = "<@&836968319935709256>"
 }
 
 $WEBHOOK_DATA="{
