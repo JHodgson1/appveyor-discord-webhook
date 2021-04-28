@@ -17,6 +17,11 @@ Switch ($STATUS) {
   "success" {
     $EMBED_COLOR=1357344
     $STATUS_MESSAGE="Build passed!"
+    
+    # set to orange for non-main-releases
+    if (!($env:CONFIGURATION -eq "Release")) {
+      $EMBED_COLOR=12495189
+    }
     Break
   }
   "failure" {
